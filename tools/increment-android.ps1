@@ -17,4 +17,5 @@ process
 
     # Save the file
     $xam.Save($ProjectPath + "\Properties\AndroidManifest.xml")
+	if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode)  }
 }
