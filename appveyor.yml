@@ -3,7 +3,7 @@ environment:
   keystore_pass:
     secure: reQcaWLyvwK+zjsgE49OPw==
 install:
-  - ps: Install-Product python 3.5
+  - set PATH=C:\Python35;C:\Python35\Scripts;%PATH%
   - ps: nuget install secure-file -ExcludeVersion
   - pip install --upgrade pyopenssl
   - pip install --upgrade google-api-python-client
