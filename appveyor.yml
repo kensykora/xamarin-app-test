@@ -1,6 +1,4 @@
 version: 0.1.0-{build}
-environment:
-  SignAndroidPackage: 
 configuration:
   - Debug
   - Release
@@ -9,3 +7,4 @@ before_build:
 artifacts:
   - path: App.UI.Droid\bin\**\App.UI.Droid-Signed.apk
     name: Android
+build_script: msbuild /t:SignAndroidPackage App.sln
