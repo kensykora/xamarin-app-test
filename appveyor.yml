@@ -4,3 +4,6 @@ configuration:
   - Release
 before_build:
   - nuget restore
+artifacts:
+  - path: App.UI.Droid\bin\**\App.UI.Droid-Signed.apk
+    name: Android
