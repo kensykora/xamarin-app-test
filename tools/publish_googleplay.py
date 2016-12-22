@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Samples: https://github.com/googlesamples/android-play-publisher-api/tree/master/v2/python
+#
+# Expects key.p12 - This is not added to version control. The nuget package
+# 'secure-file' is used to encrypt / decrypt and the decryption key IS
+# stored in appveyor.
+
 """Lists all the apks for a given app."""
 
 import argparse

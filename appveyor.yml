@@ -4,7 +4,7 @@ environment:
     secure: reQcaWLyvwK+zjsgE49OPw==
 install:
   - ps: nuget install secure-file -ExcludeVersion
-  - pip install --upgrade pythonopenssl
+  - pip install --upgrade pyopenssl
   - pip install --upgrade google-api-python-client
 configuration:
   - Debug
