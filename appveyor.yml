@@ -4,6 +4,7 @@ environment:
     secure: reQcaWLyvwK+zjsgE49OPw==
 install:
   - set PATH=C:\Python35;C:\Python35\Scripts;%PATH%
+  - py --version
   - ps: nuget install secure-file -ExcludeVersion
   - pip install --upgrade pyopenssl
   - pip install --upgrade google-api-python-client
