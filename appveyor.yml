@@ -17,5 +17,5 @@ artifacts:
     name: Android
 after_build: 
   - ps: iex 'MSBuild "/t:SignAndroidPackage" "/p:AndroidKeyStore=true" "/p:AndroidSigningKeyAlias=release-keystore" "/p:AndroidSigningKeyPass=$env:keystore_pass" "/p:AndroidSigningKeyStore=Properties\release-keystore.keystore" "/p:AndroidSigningStorePass=$env:keystore_pass" "App.UI.Droid\App.UI.Droid.csproj" /v:q'
-  - ps: secure_file\tools\secure_file -decrypt tools\key.p12.enc -secret $env:keystore_pass
+  - ps: secure-file\tools\secure-file.exe -decrypt tools\key.p12.enc -secret $env:keystore_pass
   - py tools\publish_googleplay.py
