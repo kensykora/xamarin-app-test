@@ -50,7 +50,7 @@ def main():
 
   credentials = ServiceAccountCredentials.from_p12_keyfile(
   	  SERVICE_ACCOUNT_EMAIL,
-  	  'key.p12',
+  	  os.getenv('APPVEYOR_BUILD_FOLDER') + '\tools\key.p12',
   	  scopes=[scope]
   	)
 
