@@ -7,4 +7,5 @@ before_build:
 artifacts:
   - path: App.UI.Droid\bin\**\App.UI.Droid-Signed.apk
     name: Android
-build_script: msbuild /t:SignAndroidPackage App.sln
+after_build: 
+ - msbuild /t:SignAndroidPackage App.UI.Droid\App.UI.Droid.csproj
