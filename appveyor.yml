@@ -9,7 +9,7 @@ before_build:
   - ps: 'tools\increment-android.ps1 -ProjectPath "${env:APPVEYOR_BUILD_FOLDER}\App.UI.Droid" -NewVersion "$env:APPVEYOR_BUILD_VERSION"'
   - nuget restore
 artifacts:
-  - path: App.UI.Droid\bin\**\App.UI.Droid-Signed.apk
+  - path: App.UI.Droid\bin\**\com.ksykora.mytipcalculator-Signed.apk
     name: Android
 after_build: 
   - ps: iex 'MSBuild "/t:SignAndroidPackage" "/p:AndroidKeyStore=true" "/p:AndroidSigningKeyAlias=release-keystore" "/p:AndroidSigningKeyPass=$env:keystore_pass" "/p:AndroidSigningKeyStore=Properties\release-keystore.keystore" "/p:AndroidSigningStorePass=$env:keystore_pass" "App.UI.Droid\App.UI.Droid.csproj" /v:q'
