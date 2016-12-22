@@ -3,7 +3,7 @@ environment:
   keystore_pass:
     secure: reQcaWLyvwK+zjsgE49OPw==
 install:
-  - set PATH=C:\Python35;C:\Python35\Scripts;%PATH%
+  - set PATH=%PATH%;C:\Python35;C:\Python35\Scripts
   - py --version
   - ps: nuget install secure-file -ExcludeVersion
   - pip install --upgrade pyopenssl
