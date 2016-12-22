@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{1B3FCCC7
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
+		tools\increment-android.ps1 = tools\increment-android.ps1
 	EndProjectSection
 EndProject
 Global
