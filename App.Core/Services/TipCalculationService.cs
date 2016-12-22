@@ -1,14 +1,14 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace App.Core.Services
 {
-    public class NoTipForYouCalculation : ICalculation
+    public class TipCalculationService : ICalculation
     {
         public double CalculateTip(double subtotal, int generosity)
         {
-            return 0;
+            return subtotal * (generosity / 100d);
         }
     }
 }
