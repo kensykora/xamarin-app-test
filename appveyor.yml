@@ -3,12 +3,11 @@ configuration:
   - Debug
   - Release
 before_build:
+  - ps: 'write-host "Version: $env:APPVEYOR_BUILD_VERSION-$env:APPVEYOR_BUILD_NUMBER"'
+  - ps: 'tools\increment-android.ps1 -ProjectPath "App.UI.Droid" -NewVersion "$env:APPVEYOR_BUILD_VERSION-$env:APPVEYOR_BUILD_NUMBER"'
   - nuget restore
 artifacts:
   - path: App.UI.Droid\bin\**\App.UI.Droid-Signed.apk
     name: Android
-before_build:
- - ps: write-host "Version: $env:APPVEYOR_BUILD_VERSION-$env:APPVEYOR_BUILD_NUMBER"
- - ps: tools\increment-android.ps1 -ProjectPath "App.UI.Droid" -NewVersion "$env:APPVEYOR_BUILD_VERSION-$env:APPVEYOR_BUILD_NUMBER"
 after_build: 
- - msbuild /t:SignAndroidPackage App.UI.Droid\App.UI.Droid.csproj
+  - msbuild /t:SignAndroidPackage App.UI.Droid\App.UI.Droid.csproj
