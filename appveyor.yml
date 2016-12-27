@@ -6,6 +6,7 @@ install:
   - ps: nuget install secure-file -ExcludeVersion
   - C:\Python35\Scripts\pip install --upgrade pyopenssl
   - C:\Python35\Scripts\pip install --upgrade google-api-python-client
+  - regedit /S %APPVEYOR_BUILD_FOLDER%\tools\apk-content-type.reg
 configuration:
   - Debug
   - Release
