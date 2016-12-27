@@ -19,4 +19,4 @@ artifacts:
 after_build: 
   - ps: iex 'MSBuild "/t:SignAndroidPackage" "/p:AndroidKeyStore=true" "/p:AndroidSigningKeyAlias=release-keystore" "/p:AndroidSigningKeyPass=$env:keystore_pass" "/p:AndroidSigningKeyStore=Properties\release-keystore.keystore" "/p:AndroidSigningStorePass=$env:keystore_pass" "App.UI.Droid\App.UI.Droid.csproj" /v:q'
   - ps: secure-file\tools\secure-file.exe -decrypt tools\key.p12.enc -secret $env:keystore_pass
-  - C:\Python35\python.exe tools\publish_googleplay.py com.ksykora.mytipcalculator
+  - IF %CONFIGURATION%==Release C:\Python35\python.exe tools\publish_googleplay.py com.ksykora.mytipcalculator %APPVEYOR_BUILD_FOLDER%\App.UI.Droid\bin\%CONFIGURATION%\com.ksykora.mytipcalculator-Signed.apk
