@@ -241,5 +241,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-tools/key.p12
-secure-file
+tools/*.json
